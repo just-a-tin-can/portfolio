@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Leong | Aspiring Penetration Tester</title>
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg-alt: #111820;
+    --card: #151d27;
+    --accent: #39ff8f;
+    --accent-dim: #1f8f52;
+    --text: #e6edf3;
+    --text-dim: #9aa9b6;
+    --border: #22303c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+    border-bottom: 1px solid var(--border);
+  }
+  header .tag {
+    font-family: 'Consolas', monospace;
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  header h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+  }
+  header p.role {
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+  }
+  header .contact {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(11,15,20,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.9rem 1rem;
+    flex-wrap: wrap;
+  }
+  nav a { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .lead {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    max-width: 700px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .card h3 { font-size: 1.1rem; }
+  .card .meta {
+    color: var(--accent-dim);
+    font-size: 0.85rem;
+    margin: 0.2rem 0 0.75rem;
+    font-family: 'Consolas', monospace;
+  }
+  .card ul { margin-left: 1.1rem; color: var(--text-dim); }
+  .card li { margin-bottom: 0.4rem; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .skill-group h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .pill {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .goal-list li { margin-bottom: 0.6rem; color: var(--text-dim); }
+
+  .cta {
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+  .cta h2::before { display: none; }
+  .cta h2 { justify-content: center; }
+  .cta a.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    color: var(--accent);
+  }
+  .cta a.button:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">// aspiring cybersecurity professional</div>
+  <h1>Justin Leong</h1>
+  <p class="role">Diploma Student, Singapore Polytechnic &mdash; Applying for Trainee Penetration Tester, FortiEdge</p>
+  <div class="contact">
+    <span>justinleongjq@gmail.com</span>
+    <span>+65 8507 1474</span>
+    <a href="https://www.linkedin.com/in/justin-leong-916b25411/" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">GitHub</a>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#why">Why Pentesting</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#learning">Learning Path</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="lead">
+      I'm a Singapore Polytechnic student with a growing interest in cybersecurity, particularly
+      penetration testing. My interest started through hands-on IT work &mdash; setting up hardware,
+      resetting network switches, and troubleshooting systems during my internship &mdash; which sparked
+      curiosity about how those same systems can be attacked and defended. I'm applying for the
+      Trainee Penetration Tester role at FortiEdge because it offers structured mentorship to turn that
+      curiosity into a real, employable skill set.
+    </p>
+  </section>
+
+  <section id="why">
+    <h2>Why Penetration Testing</h2>
+    <p class="lead">
+      FortiEdge's trainee programme covers web, mobile, and network penetration testing as well as
+      security hardening and source code review &mdash; areas I want to build competence in through
+      structured training rather than in isolation. I'm drawn to the problem-solving side of the role:
+      thinking like an attacker to help organisations find weaknesses before real adversaries do. I know
+      I'm starting from the fundamentals, and I see that as a reason to want mentorship, not a reason to
+      hold back from applying.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>IT Admin Intern</h3>
+      <div class="meta">Capiteq &middot; Jan 2025 &ndash; Feb 2025</div>
+      <ul>
+        <li>Reset and reconfigured hardware including network switches and laptops for company reuse &mdash; direct, hands-on exposure to the network infrastructure that penetration testing evaluates.</li>
+        <li>Supported general IT operations and physical infrastructure work, learning to follow procedures carefully when handling company equipment.</li>
+        <li>Worked independently on assigned tasks while checking in with supervisors, building comfort with taking ownership of a task from start to finish.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>AV Class Representative</h3>
+      <div class="meta">Geylang Methodist School (Secondary) &middot; 2021 &ndash; 2024</div>
+      <ul>
+        <li>Set up and maintained classroom AV equipment (projector, visualiser, computer) for daily lessons.</li>
+        <li>Debugged IT-related issues on the spot, often under time pressure before a lesson started &mdash; an early habit of calm, methodical troubleshooting.</li>
+        <li>Acted as a point of contact between classmates and teachers for technical and logistical issues, building communication and reliability.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Bakery Assistant</h3>
+      <div class="meta">Bakery Brera &middot; June 2022</div>
+      <ul>
+        <li>Managed the cashier and handled customer orders, including operating the coffee machine, in a fast-paced environment.</li>
+        <li>Worked as part of a small team to keep the shop running smoothly &mdash; restocking, cleaning, and covering for teammates as needed.</li>
+        <li>Built comfort with direct, professional communication under pressure &mdash; a skill that carries directly into client-facing engagements.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Technical Foundations</h3>
+        <div class="pill-row">
+          <span class="pill">Computer hardware setup</span>
+          <span class="pill">Network switch configuration (basic)</span>
+          <span class="pill">Micro:bit block-based programming</span>
+          <span class="pill">IT troubleshooting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Professional &amp; Soft Skills</h3>
+        <div class="pill-row">
+          <span class="pill">Bilingual: English &amp; Chinese</span>
+          <span class="pill">Clear communication</span>
+          <span class="pill">Teamwork</span>
+          <span class="pill">Fast, self-directed learner</span>
+          <span class="pill">Handling confidential/company info responsibly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <h2>Learning Path</h2>
+    <p class="lead" style="margin-bottom: 1.25rem;">
+      I'm at the start of my cybersecurity journey and building toward it deliberately:
+    </p>
+    <ul class="goal-list">
+      <li>Studying networking and OS fundamentals to strengthen the base the trainee programme builds on.</li>
+      <li>Following beginner-friendly platforms (e.g. TryHackMe) to get structured, guided practice with common tools and techniques.</li>
+      <li>Reading up on current penetration testing methodologies and industry news to stay aware of trends going into the interview.</li>
+      <li>Long-term goal: work toward an industry certification (e.g. CompTIA Security+) alongside on-the-job training.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Singapore Polytechnic</h3>
+      <div class="meta">Diploma in progress</div>
+    </div>
+    <div class="card">
+      <h3>Geylang Methodist School (Secondary)</h3>
+      <div class="meta">2021 &ndash; 2024</div>
+    </div>
+    <div class="card">
+      <h3>Radin Mas Primary School</h3>
+      <div class="meta">2015 &ndash; 2020</div>
+    </div>
+  </section>
+
+</main>
+
+<section class="cta">
+  <h2>Let's Talk</h2>
+  <p class="lead" style="margin: 0 auto;">I'd welcome the chance to discuss how my hands-on IT background and drive to learn make me a strong fit for the FortiEdge trainee programme.</p>
+  <a class="button" href="mailto:justinleongjq@gmail.com">justinleongjq@gmail.com</a>
+</section>
+
+<footer>
+  &copy; 2026 Justin Leong &middot; Built for the FortiEdge Trainee Penetration Tester application
+</footer>
+
+</body>
+</html>
